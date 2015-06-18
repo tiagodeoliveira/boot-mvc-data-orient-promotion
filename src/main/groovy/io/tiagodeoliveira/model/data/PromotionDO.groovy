@@ -1,17 +1,14 @@
-package io.tiagodeoliveira.model
+package io.tiagodeoliveira.model.data
 
 import com.orientechnologies.orient.core.annotation.OId
 import com.orientechnologies.orient.core.annotation.OVersion
 
-/**
- * Created by tiago on 16/06/15.
- */
-class Store {
+class PromotionDO {
     @OId
     String id
     @OVersion
     Long version
     String name
-    String address
-    String contact
+    String description
+    def detachAll
 }

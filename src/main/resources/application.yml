@@ -2,7 +2,7 @@ spring:
     thymeleaf.cache: false
     data:
         orient:
-            url: remote:orientdb-7382cf3a-1.tiagodeoliveira.cont.tutum.io:2480
+            url: remote:orientdb-7382cf3a-1.tiagodeoliveira.cont.tutum.io:2424/promotions
             username: admin
             password: Rjcya&$qCLWuVOI6
 server:

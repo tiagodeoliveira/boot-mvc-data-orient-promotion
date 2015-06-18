@@ -1,9 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/default">
 <head lang="en">
     <title></title>
 </head>
 <body>
-tiagoooooooooooooooooooooooajdfbsadojfhojdsa
+    <section layout:fragment="content">
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="btn btn-primary" th:href="@{/promotion/create}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                        </a>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="promo : ${promotions}">
+                            <th>
+                                <a th:href="@{'delete/' + ${#strings.replace(promo.id, '#', '')}}">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
+                            </th>
+                            <th scope="row"><a th:href="@{'edit/' + ${#strings.replace(promo.id, '#', '')}}" th:text="${promo.id}"></a></th>
+                            <td th:text="${promo.name}"></td>
+                            <td th:text="${promo.description}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
