@@ -16,4 +16,4 @@ Since the graph database is not supported yet on spring-data-orientdb, the edges
 
 A live demo can be seen [here](http://boot-mvc-data-orient-promotion-220c1a1c.tiagodeoliveira.svc.tutum.io:8008/)
 
-**Remember, it's just a POC**
+**Remember, it's a POC and I still working when I have time.**
