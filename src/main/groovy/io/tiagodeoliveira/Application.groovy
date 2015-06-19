@@ -3,6 +3,7 @@ package io.tiagodeoliveira
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx
 import io.tiagodeoliveira.model.data.ClientDO
 import io.tiagodeoliveira.model.data.PromotionDO
+import io.tiagodeoliveira.model.data.SaleDO
 import io.tiagodeoliveira.model.data.StoreDO
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
@@ -37,5 +38,6 @@ class Application implements CommandLineRunner {
         db.getEntityManager().registerEntityClass(ClientDO.class);
         db.getEntityManager().registerEntityClass(PromotionDO.class);
         db.getEntityManager().registerEntityClass(StoreDO.class);
+        db.getEntityManager().registerEntityClass(SaleDO.class);
     }
 }

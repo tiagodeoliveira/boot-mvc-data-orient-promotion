@@ -14,5 +14,6 @@ class StoreDO {
     String name
     String address
     String contact
+    List<PromotionDO> promotions
     def detachAll
 }

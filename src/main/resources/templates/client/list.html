@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/default">
+<head lang="en">
+    <title></title>
+</head>
+<body>
+    <section layout:fragment="content">
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="btn btn-primary" th:href="@{/client/create}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                        </a>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="client : ${clients}">
+                            <th>
+                                <a th:href="@{'delete/' + ${#strings.replace(client.id, '#', '')}}">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
+                            </th>
+                            <th scope="row"><a th:href="@{'edit/' + ${#strings.replace(client.id, '#', '')}}" th:text="${client.id}"></a></th>
+                            <td th:text="${client.name}"></td>
+                            <td th:text="${client.address}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

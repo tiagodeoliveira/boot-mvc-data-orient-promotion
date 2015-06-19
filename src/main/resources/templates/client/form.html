@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/default">
+<head lang="en">
+    <title></title>
+</head>
+<body>
+<section layout:fragment="content">
+
+<div class="container">
+    <div class="row">
+        <form role="form" action="#" th:action="@{/client/save}" th:object="${client}" method="post" th:if="${client}">
+            <input type="hidden" th:field="*{id}"/>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Client name" required="true" th:field="*{name}"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="address" id="address" placeholder="Address" required="true" th:field="*{address}"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right"/>
+            </div>
+        </form>
+    </div>
+</div>
+    </section>
+</body>
+</html>
