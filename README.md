@@ -16,4 +16,4 @@ Since the graph database is not supported yet on spring-data-orientdb, the edges
 
 A live demo can be seen [here](http://boot-mvc-data-orient-promotion-220c1a1c.tiagodeoliveira.svc.tutum.io:8008/)
 
-**Remember, it's a POC and I still working when I have time.**
+This project is a proof of concept and I have just a couple of free nights to work. I intend to evolute this with spring-security and work on the spring-data orientdb-graph-database module to make easy to deal with graph inside spring-data repositories.
