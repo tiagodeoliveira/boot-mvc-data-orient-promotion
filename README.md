@@ -13,3 +13,7 @@ The application aims to allow the CRUD of clients, stores, promotions and sales.
 One store has many promotions, one client "buys a sale", one sale belongs to a promotion and is done by a store.
 
 Since the graph database is not supported yet on spring-data-orientdb, the edges on alchemy.js visualization are created manually.
+
+A live demo can be seen [here](http://boot-mvc-data-orient-promotion-220c1a1c.tiagodeoliveira.svc.tutum.io:8008/)
+
+**Remember, it's just a POC**
