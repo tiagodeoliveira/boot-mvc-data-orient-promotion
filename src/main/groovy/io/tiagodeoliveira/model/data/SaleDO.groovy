@@ -15,5 +15,6 @@ class SaleDO {
     StoreDO store
     PromotionDO promotion
     Long price
+    Date date
     def detachAll
 }

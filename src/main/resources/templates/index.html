@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layouts/default">
+      layout:decorator="layouts/default" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.min.css"/>
 </head>
 <body>
 <section layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="panel">
+
+                <label for="promotions">Select One Promotion to Show the Graph:</label>
+                    <select name="promotions" title='Promotions ...' id="promotions" data-size="auto" data-container="body" onchange="graphBuilder();">
+                            <option th:each="promo,row : *{promotions}"
+                                    th:text="${promo.name}"
+                                    th:value="${promo.id}">
+                            </option>
+                    </select>
+                </div>
+            </div>
+        </div>
     <div class="alchemy" id="alchemy" style="min-height: 500px;"></div>
     <script src="http://cdn.graphalchemist.com/alchemy.min.js"></script>
     <script src="js/graph.js"></script>

@@ -3,30 +3,52 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorator="layouts/default">
 <head lang="en">
-    <title></title>
+    <title>Store</title>
 </head>
 <body>
 <section layout:fragment="content">
 
 <div class="container">
     <div class="row">
-        <form role="form" action="#" th:action="@{/promotion/save}" th:object="${promotion}" method="post" th:if="${promotion}">
+        <form role="form" action="#" th:action="@{/store/save}" th:object="${store}" method="post" th:if="${store}">
             <input type="hidden" th:field="*{id}"/>
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Promotion name" required="true" th:field="*{name}"/>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Store name" required="true" th:field="*{name}"/>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="address">Address</label>
                     <div class="input-group">
-                        <textarea name="description" id="description" class="form-control" rows="5" required="true" th:field="*{description}"></textarea>
+                        <input type="text" class="form-control" name="address" id="address" placeholder="Address" required="true" th:field="*{address}"/>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact" required="true" th:field="*{contact}"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="promotions">Promotions</label>
+                    <div class="input-group">
+                        <select name="promotions" class="selectpicker" multiple="true" title='Promotions ...' id="promotions" data-size="auto" data-container="body">
+                            <option th:each="promo,row : *{promotions}"
+                                    th:text="${promo.name}"
+                                    th:value="${promo.id}"
+                                    th:selected="${promo.active}" >
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
                 <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right"/>
             </div>
         </form>

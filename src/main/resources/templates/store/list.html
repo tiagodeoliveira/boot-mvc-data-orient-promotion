@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorator="layouts/default">
 <head lang="en">
-    <title></title>
+    <title>Stores</title>
 </head>
 <body>
     <section layout:fragment="content">
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a class="btn btn-primary" th:href="@{/promotion/create}">
+                        <a class="btn btn-primary" th:href="@{/store/create}">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
                         </a>
                     </div>
@@ -21,19 +21,21 @@
                             <th></th>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Description</th>
+                            <th>Address</th>
+                            <th>Contact</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="promo : ${promotions}">
+                        <tr th:each="store : ${stores}">
                             <th>
-                                <a th:href="@{'delete/' + ${#strings.replace(promo.id, '#', '')}}">
+                                <a th:href="@{'delete/' + ${#strings.replace(store.id, '#', '')}}">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                 </a>
                             </th>
-                            <th scope="row"><a th:href="@{'edit/' + ${#strings.replace(promo.id, '#', '')}}" th:text="${promo.id}"></a></th>
-                            <td th:text="${promo.name}"></td>
-                            <td th:text="${promo.description}"></td>
+                            <th scope="row"><a th:href="@{'edit/' + ${#strings.replace(store.id, '#', '')}}" th:text="${store.id}"></a></th>
+                            <td th:text="${store.name}"></td>
+                            <td th:text="${store.address}"></td>
+                            <td th:text="${store.contact}"></td>
                         </tr>
                         </tbody>
                     </table>

@@ -8,5 +8,4 @@ import org.springframework.data.orient.object.repository.OrientObjectRepository
  * @since 6/17/15
  */
 interface ClientRepository extends OrientObjectRepository<ClientDO> {
-    List<ClientDO> findByName(String name)
 }

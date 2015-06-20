@@ -26,7 +26,11 @@ class PromotionController {
     def list(Model model) {
         try {
             def promotions = this.promotionRepository.findAll()
-            model.addAttribute("promotions", promotions)
+            def promos = []
+            promotions.each { promo ->
+                promos += [new PromotionVO(id: promo.id, name: promo.name, description: promo.description)]
+            }
+            model.addAttribute("promotions", promos)
             return 'promotion/list'
         } catch (Exception e) {
             log.throwing('PromotionController', 'list', e)
